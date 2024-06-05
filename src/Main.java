@@ -2,23 +2,19 @@ import pilaVector.PilaVector ;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        ArbolBinario arbol;
-        Nodo a1, a2, a;
-        PilaVector pila = new PilaVector();
+        ArbolBinarioBusqueda arbolBinarioBusqueda = new ArbolBinarioBusqueda();
 
-        a1 = ArbolBinario.nuevoArbol(null,"Maria",null);
-        a2 = ArbolBinario.nuevoArbol(null,"Rodrigo",null);
-        a = ArbolBinario.nuevoArbol(a1,"Esperanza",a2);
-        pila.insertar(a);
+        arbolBinarioBusqueda.insertar(24);
+        arbolBinarioBusqueda.insertar(13);
+        arbolBinarioBusqueda.insertar(45);
+        arbolBinarioBusqueda.buscar(24);
+        arbolBinarioBusqueda.eliminar(13);
 
-        a1 = ArbolBinario.nuevoArbol(null,"Anyora",null);
-        a2 = ArbolBinario.nuevoArbol(null,"Abel",null);
-        a = ArbolBinario.nuevoArbol(a1,"M Jesus",a2);
-        pila.insertar(a);
-        //a2 = (Nodo) pila.quitar();
-        //a1 = (Nodo) pila.quitar();
-        a = ArbolBinario.nuevoArbol(a1,"Esperanza",a2);
-        arbol = new ArbolBinario(a);
-        System.out.println("Arbol: " + a1.dato);
+        System.out.println("RECORRIDO PRE ORDEN");
+        ArbolBinario.preOrden(arbolBinarioBusqueda.raizArbol());
+        System.out.println("\nRECORRIDO IN ORDEN");
+        ArbolBinario.inOrden(arbolBinarioBusqueda.raizArbol());
+        System.out.println("\nRECORRIDO POST ORDEN");
+        ArbolBinario.postOrden(arbolBinarioBusqueda.raizArbol());
     }
 }

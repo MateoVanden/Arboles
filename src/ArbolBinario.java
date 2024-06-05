@@ -1,4 +1,4 @@
-public class ArbolBinario {
+class ArbolBinario {
     protected Nodo raiz;
     public ArbolBinario()
     {
@@ -18,4 +18,32 @@ public class ArbolBinario {
     public static Nodo nuevoArbol(Nodo ramaIzqda, Object dato, Nodo ramaDrcha){
         return new Nodo(ramaIzqda, dato, ramaDrcha);
     }
+    // Recorrido preorden
+    public static void preOrden(Nodo r){
+        if (r != null){
+            r.visitarNodo();
+            preOrden (r.getIzquierdo());
+            preOrden (r.getDerecho());
+        }
+    }
+
+    // Recorrido inorden
+    public static void inOrden(Nodo r){
+        if (r != null){
+            inOrden (r.getIzquierdo());
+            r.visitarNodo();
+            inOrden (r.getDerecho());
+        }
+    }
+
+    // Recorrido de un árbol binario en postorden
+    public static void postOrden(Nodo r){
+        if (r != null){
+            postOrden (r.getIzquierdo());
+            postOrden (r.getDerecho());
+            r.visitarNodo();
+        }
+    }
+
 }
+

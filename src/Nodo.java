@@ -1,25 +1,40 @@
-public class Nodo
+class Nodo
     {
         protected Object dato;
-        protected Nodo izdo;
-        protected Nodo dcho;
+        protected Nodo Izquierdo;
+        protected Nodo Derecho;
+
         public Nodo(Object dato)
         {
             this.dato = dato;
-            this.izdo = null;
-            this.dcho = null;
+            this.Izquierdo = null;
+            this.Derecho = null;
         }
-        public Nodo(Nodo ramaIzdo, Object dato, Nodo ramaDcho)
+        public Nodo(Nodo Izquierdo, Object dato, Nodo Derecho)
         {
             this.dato = dato;
-            this.izdo = ramaIzdo;
-            this.dcho = ramaDcho;
+            Izquierdo = null;
+            Derecho = null;
         }
-        // operaciones de acceso
-        public Object valorNodo(){ return dato; }
-        public Nodo subarbolIzdo(){ return izdo; }
-        public Nodo subarbolDcho(){ return dcho; }
-        public void nuevoValor(Object d){ dato = d; }
-        public void ramaIzdo(Nodo n){ izdo = n; }
-        public void ramaDcho(Nodo n){ dcho = n; }
+        public Object getDato(){
+            return dato;
+        }
+        public Nodo getIzquierdo(){
+            return Izquierdo;
+        }
+        public Nodo getDerecho(){
+            return Derecho;
+        }
+        public void nuevoValor(Object dato){
+            this.dato = dato;
+        }
+        public void ramaIzdo(Nodo dato){
+            this.Izquierdo = dato;
+        }
+        public void ramaDcho(Nodo dato){
+            this.Derecho = dato;
+        }
+        public void  visitarNodo() {
+            System.out.print(dato + " ");
+        }
     }
